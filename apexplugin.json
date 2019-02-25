@@ -1,32 +1,38 @@
 {
-    "name": "APEX D3 Dashboard Charts",
-    "version": "1.0",
-    "description": "Create with only one SQL statement one or more D3 charts with different configurations and different chart types. Possible are among other things: Bar, line, area, pie, gauge, donut, step and stack charts.\r\n\r\nThe SQL statement is divided into 3 cursors:\r\n1. configuration for a certain chart\r\n2. the definition of sera, colours and chart type\r\n3. the data of the respective series\r\n\r\nAll things such as chart type, number of series, colors, size, data points and chart configurations can be adjusted at runtime by the SQL statement and reset again and again by refresh. Examples can be found in the Sample App:\r\n\r\nhttps:\/\/apex.oracle.com\/pls\/apex\/f?p=103428\r\n",
-    "keywords": ["oracle", "apex", "plugin", "charts", "region", "responsive", "d3"],
-    "homepage": "https://github.com/RonnyWeiss/APEX-D3-Dashboard-Charts",
+    "name": "APEX Advent Calendar",
+    "version": "1.3",
+    "description": "This Advent Calendar is just a funny thing that you can use to suprise your users on Christmas.",
+    "keywords": [
+    "oracle",
+    "apex",
+    "plugin",
+    "region"
+  ],
+    "homepage": "https://github.com/RonnyWeiss/APEX-Advent-Calendar",
     "bugs": {
-        "url": "https://github.com/RonnyWeiss/APEX-D3-Dashboard-Charts/issues",
+        "url": "https://github.com/RonnyWeiss/APEX-Advent-Calendar/issues",
         "email": "wronny@gmx.de"
     },
     "license": "MIT",
     "author": {
         "name": "Ronny Weiß",
         "email": "wronny@gmx.de",
+        "twitter": "ronny_weiss_",
         "donationUrl": "https://www.paypal.me/RonnyW1"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/RonnyWeiss/APEX-D3-Dashboard-Charts.git"
+        "url": "https://github.com/RonnyWeiss/APEX-Advent-Calendar.git"
     },
     "oracle": {
-        "versions": ["11.2.0.1", "12.1.0.1", "12.2.0.1"],
+        "versions": ["11.2.0.1", "12.1.0.1", "12.2.0.1", "18.4.0.0"],
         "apex": {
             "versions": ["5.1.4", "18.1.0.00.45", "18.2.0.00.12"],
             "plugin": {
                 "internalName": "APEX.ADVENT.CALENDAR",
                 "type": "region",
                 "demo": "https://apex.oracle.com/pls/apex/f?p=103428",
-                "previewImage": "https://github.com/RonnyWeiss/APEX-D3-Dashboard-Charts/raw/master/screenshot.gif"
+                "previewImage": "https://raw.githubusercontent.com/RonnyWeiss/APEX-Advent-Calendar/master/screenshot.gif"
             }
         }
     }
