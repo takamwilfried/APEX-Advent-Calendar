@@ -6,7 +6,7 @@ whenever sqlerror exit sql.sqlcode rollback
 -- ORACLE Application Express (APEX) export file
 --
 -- You should run the script connected to SQL*Plus as the Oracle user
--- APEX_180200 or as the owner (parsing schema) of the application.
+-- APEX_190100 or as the owner (parsing schema) of the application.
 --
 -- NOTE: Calls to apex_application_install override the defaults below.
 --
@@ -36,15 +36,13 @@ wwv_flow_api.create_plugin(
 '    P_IS_PRINTER_FRIENDLY   IN BOOLEAN',
 ') RETURN APEX_PLUGIN.T_REGION_RENDER_RESULT IS',
 '',
-'    V_REGION_ID    VARCHAR2( 200 ) := ''acal-''',
-'    || P_REGION.STATIC_ID;',
+'    V_REGION_ID    VARCHAR2( 200 ) := APEX_ESCAPE.HTML_ATTRIBUTE( ''acal-'' || P_REGION.STATIC_ID );',
 '    V_SHOW_ALL     VARCHAR2( 200 ) := P_REGION.ATTRIBUTE_01;',
 '    V_MONTH        NUMBER  := P_REGION.ATTRIBUTE_02;',
 '    V_SHOW_ALL_B   BOOLEAN := FALSE;',
 '    V_IMG_URI      VARCHAR2( 4000 CHAR ) := P_REGION.ATTRIBUTE_03;',
 'BEGIN',
 '    APEX_CSS.ADD_FILE( P_NAME => ''css/style.min'', P_DIRECTORY => P_PLUGIN.FILE_PREFIX, P_VERSION => NULL, P_KEY => ''acal-style'' );',
-'',
 '    APEX_JAVASCRIPT.ADD_LIBRARY( P_NAME => ''js/script.min'', P_DIRECTORY => P_PLUGIN.FILE_PREFIX, P_VERSION => NULL, P_KEY => ''acal-script'' );',
 '',
 '    SYS.HTP.P( ''<div id="''',
@@ -146,7 +144,7 @@ wwv_flow_api.create_plugin(
 ,p_render_function=>'F_RENDER'
 ,p_substitute_attributes=>true
 ,p_subscribe_plugin_settings=>true
-,p_version_identifier=>'1.3'
+,p_version_identifier=>'1.3.1'
 ,p_about_url=>'https://github.com/RonnyWeiss/APEX-Advent-Calendar'
 ,p_files_version=>1211
 );
